@@ -1,0 +1,1 @@
+{"ast":null,"code":"import styled from 'styled-components';\nexport const Container = styled.div.withConfig({\n  displayName: \"Layoutstyles__Container\",\n  componentId: \"sc-8hu428-0\"\n})([\"display:flex;flex-direction:column;height:100vh;\"]);","map":null,"metadata":{},"sourceType":"module"}

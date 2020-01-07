@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport { Container } from './Layout.styles';\n\nconst Layout = ({\n  children\n}) => {\n  return __jsx(Container, null, children);\n};\n\nexport default Layout;","map":null,"metadata":{},"sourceType":"module"}
