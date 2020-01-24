@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 //TODO: Style the Program Info Component
 /*
     Wrapper:
@@ -33,7 +32,7 @@ import styled from 'styled-components'
         * add 2 rem of padding left and right
 */
 
-type DescHeaderProps = {
+interface DescHeaderProps {
     center?: boolean
 }
 

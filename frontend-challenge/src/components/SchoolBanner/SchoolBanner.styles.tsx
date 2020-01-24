@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 
-
-
-type BannerType = {
+interface BannerType {
     backgroundColor: string
 }
 
-type LogoType ={
+interface LogoType {
     src: string
 }
 
@@ -36,10 +34,6 @@ export const ProgramName = styled.h3`
     font-weight: bold;
     font-size: 2rem;
     padding: 1rem 0;
-`
-
-export const DegreeType = styled.h4`
-
 `
 
 export const CollegeName = styled.h4`

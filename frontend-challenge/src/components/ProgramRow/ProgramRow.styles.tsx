@@ -1,13 +1,13 @@
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
 import styled from 'styled-components'
 
-type FieldProps = {
+interface FieldProps {
     start: number,
     end: number
 }
 
-type LogoProps = {
+interface LogoProps {
     url: any
 }
 

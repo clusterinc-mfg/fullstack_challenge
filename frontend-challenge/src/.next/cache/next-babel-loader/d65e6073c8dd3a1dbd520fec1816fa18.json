@@ -1,1 +1,0 @@
-{"ast":null,"code":"const initialState = [];\nexport default ((state = initialState, action) => {\n  switch (action.type) {\n    default:\n      return state;\n  }\n});","map":null,"metadata":{},"sourceType":"module"}

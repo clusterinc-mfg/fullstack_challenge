@@ -1,16 +1,18 @@
+import {useRouter} from 'next/router'
 import React, {useState} from 'react'
+//import necissary items for updating redux store
+import { useDispatch } from 'react-redux'
 
 //Import necissary items to use fontAwesome
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { updateTerm } from '../../redux/Term/term.actions'
+import {Container, Input, SubmitButton} from './SearchBar.styles'
+
 library.add(faSearch);
 
-//import necissary items for updating redux store
-import { useDispatch } from 'react-redux'
-import { updateTerm } from '../../redux/Term/term.actions'
-import {useRouter} from 'next/router'
-import {Container, Input, SubmitButton} from './SearchBar.styles'
 
 
 // TODO: Build and style the search bar
@@ -41,7 +43,7 @@ const SearchBar = () => {
 
     const submit = () => {
         dispatch(updateTerm(text))
-        router.back()
+        router.route !== "/" && router.push('/') 
     }
 
     return(

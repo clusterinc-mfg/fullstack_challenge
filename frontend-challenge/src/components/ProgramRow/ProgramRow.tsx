@@ -1,19 +1,17 @@
+import Link from 'next/link'
 import React from 'react';
-import Link from 'next/Link'
 
 import {
-  ProgramName,
+  CollegeName,
+  Container,
+  FieldContainer,
   FieldHeader,
   FieldValue,
-  Container,
-  CollegeName,
-  Logo,
   FieldWrapper,
-  FieldContainer,
+  Logo,
+  ProgramName,
   TitleWrapper
 } from './ProgramRow.styles';
-
-
 
 const ProgramRow = ({program: {school, degreeType, deliveryMode, name, id, costPerCredit}}) => {
 

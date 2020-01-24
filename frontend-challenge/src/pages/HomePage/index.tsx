@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import Layout from '../../components/Layout/Layout';
-import FilterMenu from '../../components/FilterMenu/FilterMenu';
+import React, { useEffect, useState } from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
+
+import { useLazyQuery, useQuery } from '@apollo/react-hooks';
+
 import BottomBar from '../../components/BottomBar/BottomBar';
-import { useQuery, useLazyQuery } from '@apollo/react-hooks';
-import { PROGRAM_SEARCH } from '../../graphQL/queries';
-import { Spinner } from '../../components/Spinner/Spinner';
-import { useSelector, shallowEqual } from 'react-redux';
-import { ResultsHeader, ProgramContainer } from './HomePage.styles';
+import FilterMenu from '../../components/FilterMenu/FilterMenu';
+import Layout from '../../components/Layout/Layout';
 import ProgramRow from '../../components/ProgramRow/ProgramRow';
+import { Spinner } from '../../components/Spinner/Spinner';
+import { PROGRAM_SEARCH } from '../../graphQL/queries';
+import { ProgramContainer, ResultsHeader } from './HomePage.styles';
 
 //TODO: Build the home page
 /*
@@ -34,9 +36,6 @@ import ProgramRow from '../../components/ProgramRow/ProgramRow';
 
     *  If the query is loading, render the spinner.  Once is it done call the renderProgramContainer function.
 
-    *  Pass page, count, a function to update the page, and the numberOfItemsPerPage to the BottomBar
-
-    *  
 */
 
 const renderProgramContainer = (programs, count, term = null) => {
@@ -45,6 +44,7 @@ const renderProgramContainer = (programs, count, term = null) => {
       <ProgramRow key={program.id + program.name + i} program={program} />
     ));
 
+  // write the renderHeader function
   const renderHeader = (count, term) =>
     term ? `${count} items found for ${term}!` : `${count} items found!`;
 
@@ -78,6 +78,7 @@ const HomePage = () => {
   };
 
   // Use the PROGRAM_SEARCH QUERY to get the count and programs list
+  // supply that query with the offest, limit, term, and filter options
   const { loading, data } = useQuery(PROGRAM_SEARCH, { variables });
 
   if (!loading) {
@@ -87,12 +88,11 @@ const HomePage = () => {
 
   return (
     <Layout>
-      {/* Add the FilterMenu, Spinner, renderProgramContainer, and BottomBar.
-      Only render spinner if loading query*/}
-      <FilterMenu />
-
+      <FilterMenu /> 
+{/* Filter Menu goes here */}
       {loading ? <Spinner /> : renderProgramContainer(programs, count, term)}
-
+{/* Spinner or programs container */}
+{/* Bottom Bar */}
       <BottomBar
         count={count}
         page={page}

@@ -1,14 +1,11 @@
 import React from 'react'
 
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
-import SearchBar from '../SearchBar/SearchBar'
 import Menu from '../Menu/Menu'
+import SearchBar from '../SearchBar/SearchBar'
+import {Container, HamburgerContainer, Title} from './Header.styles'
 
-import {Container, Title, HamburgerContainer} from './Header.styles'
-
-
-const Header = () => {
-    return(
+const Header = () => (
         <Container>
             <HamburgerContainer>
                 <HamburgerMenu />
@@ -18,6 +15,6 @@ const Header = () => {
             <Menu />
         </Container>
     )
-}
+
 
 export default Header

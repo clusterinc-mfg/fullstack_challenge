@@ -1,28 +1,29 @@
-import React from 'react';
 import Head from 'next/head';
-
-/*
-  import necessary items
-*/
 import { withRouter } from 'next/router';
+import React from 'react';
+
 import { useQuery } from '@apollo/react-hooks';
-import { GET_PROGRAM } from '../../graphQL/queries';
 
 import Layout from '../../components/Layout/Layout';
-import { Spinner } from '../../components/Spinner/Spinner';
-import SchoolBanner from '../../components/SchoolBanner/SchoolBanner';
-import ProgramInfoBanner from '../../components/ProgramInfoBanner/ProgramInfoBanner';
 import ProgramInfo from '../../components/ProgramInfo/ProgramInfo';
+import ProgramInfoBanner from '../../components/ProgramInfoBanner/ProgramInfoBanner';
+import SchoolBanner from '../../components/SchoolBanner/SchoolBanner';
+import { Spinner } from '../../components/Spinner/Spinner';
+import { GET_PROGRAM } from '../../graphQL/queries';
 
 //TODO: Build the School Page page
 /* 
   renderBody:
     * should set the title of the page to the name of the program
+    * should render the school banner
+    * should render the program info banner
+    * should render the program info
   
   SchoolPage:
     * the contents of the page should be wrapped in the layout component
     * should trigger the GET_PROGRAM query when loaded
       the route for the school page should contain the query parameter "id"
+      see the GET_PROGRAM query
     * while the query is loading, the page should display the Spinner
 */
 
@@ -70,8 +71,8 @@ const SchoolPage = ({ router }) => {
 
   return (
     <Layout>
-      {/* render the spinner or the renderBody function */}
-      {loading ? <Spinner /> : renderBody(data.program)}
+      {/* render the Spinner or the renderBody function */}
+      {!loading && data ? renderBody(data.program) : <Spinner />}
     </Layout>
   );
 };

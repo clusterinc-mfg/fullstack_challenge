@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
-//TODO: Style the searchbar components
+//TODO: Style the searchbar components using flex-box
 /*
+    create a styled input component
+
     The Input:
         * Should grow to the maximum size allowed.
         * Have .2rem horizontal padding 

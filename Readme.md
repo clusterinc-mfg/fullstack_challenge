@@ -1,4 +1,4 @@
-run
+Run the following commands
 npm run inst
 npm run start:api
 npm run start:web

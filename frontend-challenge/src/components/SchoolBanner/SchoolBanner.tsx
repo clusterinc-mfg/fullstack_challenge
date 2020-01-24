@@ -1,8 +1,6 @@
 import React from 'react'
 
-import {Banner, ProgramName, DegreeType, CollegeName, Logo} from './SchoolBanner.styles'
-
-
+import {Banner, CollegeName, Logo, ProgramName} from './SchoolBanner.styles'
 
 const SchoolBanner = ({school, name}) => {
     return(
