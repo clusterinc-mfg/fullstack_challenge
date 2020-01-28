@@ -1,7 +1,4 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
-
-//create a schoolSchema with the following types
+//TODO: create a schoolSchema with the following types
 /*
     name = string
     programs = array of programs
@@ -18,6 +15,7 @@ const Schema = mongoose.Schema
     engineeringDevisionDescription = string
     costPerUnit = array of numbers
 */
+
 
 
 const School = mongoose.model('School', schoolSchema)

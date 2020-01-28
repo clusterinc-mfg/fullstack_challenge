@@ -19,5 +19,5 @@ input ProgramInput {
     id: String!
 }
 
-# Based on the models in the database create a type def for School, and Program
+# TODO: Based on the models in the database create a type def for School, and Program
 

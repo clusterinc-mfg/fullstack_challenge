@@ -1,15 +1,10 @@
-import { GraphQLServer } from 'graphql-yoga'
-import mongoose from 'mongoose'
-
-import Query from './server/resolvers/Query'
-
 require('dotenv').config()
 
-//establish a connection with mongoose
+
+// TODO: establish a connection with mongoose
 //see .env file for port and mongoURI
 
-//setup a graphql server.
-//use the ./server/schema.graphql file and
+// TODO: setup a graphql-yoga server.
 
 //set the server options
 //use the env port and default to 3010
@@ -18,4 +13,4 @@ require('dotenv').config()
 
 
 
-//start the server using the options
+// TODO: start the server using the options

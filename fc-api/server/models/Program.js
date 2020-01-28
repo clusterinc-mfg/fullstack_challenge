@@ -1,8 +1,4 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
-
-
-//Create a programSchema with the following types
+//TODO: Create a programSchema with the following types
 /*
     name = string,
     school = should refrence a school
